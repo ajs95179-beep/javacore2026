@@ -9,8 +9,11 @@ import com.laptrinhweb.servive.BuildingService;
 import com.laptrinhweb.servive.BuildingServiceImpl;
 
 public class BuildingController {
+	//thang controller goi service.
 	private  BuildingService buildingService =new BuildingServiceImpl();
 	public List< BuildingSearchOutput> findBuilding(BuildingSearchInput buildingSearch){
+		
+		
 		List<BuildingSearchOutput> results=buildingService.findBuilding(buildingSearch);
         return results;
         }

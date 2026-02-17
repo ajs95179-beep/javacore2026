@@ -8,7 +8,7 @@ import com.laptrinhweb.controller.BuildingController;
 
 public class BuildingListView {
 	public static void main(String[] args) {
-		String name=null;
+		String name="toa2";
 		String street =null;
 		String district =null;
 		BuildingSearchInput buildingSearch=new BuildingSearchInput();

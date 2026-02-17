@@ -1,2 +1,12 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/laptrinhweb/buildingjdbc/BuildingJdbc.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/constant/SystemConstant.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/converter/BuildingConverter.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/dao/BuildingDao.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/dao/BuildingDaoImpl.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/servive/BuildingService.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/servive/BuildingServiceImpl.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/utils/BuildingTypeUtil.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/utils/ConnectionUtils.java=UTF-8
+encoding//src/main/java/com/laptrinhweb/utils/StringUtils.java=UTF-8
 encoding//src/main/java/com/laptrinhweb/view/BuildingListView.java=UTF-8

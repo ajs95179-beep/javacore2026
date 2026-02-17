@@ -17,13 +17,13 @@ public class BuildingDaoImpl implements BuildingDao {
 
 	@Override
 	public List<BuildingDaoAnhyeuem> findBuilding(String name, String street, String district, String type) {
+		//sau khi kết nối với database nó sẽ trả về một mảng kết quả.được gán vào biến results
 		List<BuildingDaoAnhyeuem> results = new ArrayList<>();
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = ConnectionUtils.getConnection();
 			stmt = conn.createStatement();
 			StringBuilder query = new StringBuilder("select *from building " + SystemConstant.ONE_EQUAL_ONE + "");
@@ -38,6 +38,15 @@ public class BuildingDaoImpl implements BuildingDao {
 				query.append(" and type like '%" + type + "%'");
 			}
 			rs = stmt.executeQuery(query.toString());
+//thằng stmt sẽ mang cái executequery này xuông database mà thằng executequery nó chính là lệnh select
+//trong mysql.nó sẽ chọn những cái thõa mãn rồi trả lại dữ liệu được hứng bởi đối tượng rs.nó như một cái bảng 
+//tạm thời.bây giờ muốn lấy nó ra thì cần phải map sang đối tượng để java hiểu thông qua method .next
+//cái thằng lớp buildingdaoanhyeuem là nơi chứa dữ liệu của thằng dao.muốn try xuất đối lớp này 
+//thì tao thông qua đối tượng tham chiếu.là buildingDaoanhyeuem.lúc này thằng rs nó sẽ chạy qua từng dòng
+//để  lấy dữ liệu của từng cột .ở đây có cột name,street,district,type.vậy một dòng chạy qua nó sẽ có 4 
+//giá trị này.mỗi lần rs lấy gía trị xong một dòng nó sẽ được thêm vào result .đây là nơi dao lưu  dữ liêu
+//được lấy từ database .dữ liệu này sẽ được trả về tầng service.vậy đến đây là xong nhiệm vụ của dao rồi.
+//bây giowf tao lên service để phân tích tiếp.			
 			while (rs.next()) {
 				BuildingDaoAnhyeuem buildingDaoAnhyeuem = new BuildingDaoAnhyeuem();
 				buildingDaoAnhyeuem.setName(rs.getString("name"));
