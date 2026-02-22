@@ -23,7 +23,6 @@ public class BuildingDaoImpl implements BuildingDao {
 		ResultSet rs = null;
 
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = ConnectionUtils.getConnection();
 			stmt = conn.createStatement();
 			StringBuilder query = new StringBuilder("select *from building " + SystemConstant.ONE_EQUAL_ONE + "");
